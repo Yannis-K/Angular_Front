@@ -13,6 +13,7 @@ export class TicketService {
    */
 
   private ticketList: Ticket[] = TICKETS_MOCKED;
+  private index: number;
 
   /**
    * Observable which contains the list of the tickets.
@@ -26,8 +27,18 @@ export class TicketService {
   addTicket(ticket: Ticket) {
     // You need here to update the list of ticket and then update our observable (Subject) with the new list
     // More info: https://angular.io/tutorial/toh-pt6#the-searchterms-rxjs-subject
-
+    this.ticketList.push(ticket);
+    this.tickets$.next;
     
+
+  }
+
+  deletedTicket(ticket: Ticket) {
+    // You need here to update the list of ticket and then update our observable (Subject) with the new list
+    // More info: https://angular.io/tutorial/toh-pt6#the-searchterms-rxjs-subject
+    this.index = this.ticketList.indexOf(ticket,1);
+    this.ticketList.splice(this.index,1);
+    this.tickets$.next(this.ticketList)
 
   }
 }

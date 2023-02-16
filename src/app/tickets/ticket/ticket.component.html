@@ -4,5 +4,8 @@
   <i class="fas fa-calendar-alt"></i> {{ticket.date | date: 'shortTime'}} &nbsp;&nbsp;
   <i class="far fa-user"></i> {{ticket.student}}
   <i *ngIf="ticket.major == 'Informatique'" class="fas fa-database"></i> {{ticket.major}}
+  <button type="submit" class="btn-custom" (click)="deleteTicket()">Remove</button>
+</div>
+
   
   

@@ -17,4 +17,5 @@ export const TICKETS_MOCKED: Ticket[] = [
     student: 'Anakin',
     major: 'Informatique'
   },
+  
 ];
