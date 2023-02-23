@@ -12,7 +12,15 @@
   <br>
   <label for="major">
     Major <br>
+    <!--
     <input class="input-custom" type="text" id="major" [formControlName]="'major'">
+    -->
+    <select name='major' id="major" [formControlName]="'major'">
+      <option value="Anglais">Anglais</option>
+      <option value="Informatique">Informatique</option>
+      <option value="Mathématique">Mathématique</option>
+    </select>
+
   </label>
   <br>
   <button type="submit" class="btn-custom" (click)="addTicket()">Create</button>
