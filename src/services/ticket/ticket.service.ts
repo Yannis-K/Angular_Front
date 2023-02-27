@@ -14,6 +14,7 @@ export class TicketService {
 
   private ticketList: Ticket[] = TICKETS_MOCKED;
   //private index: number;
+  private ticketArchiveList: Ticket[] = TICKETS_MOCKED;
 
   /**
    * Observable which contains the list of the tickets.
@@ -41,4 +42,16 @@ export class TicketService {
 
     this.tickets$.next(this.ticketList);    
   }
+
+  archiveTicket(ticket: Ticket){
+
+    if(ticket.archived){
+      ticket.archived = false;
+    }else{
+      ticket.archived = true;
+    }
+    
+  }
+
+
 }

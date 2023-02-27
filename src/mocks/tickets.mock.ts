@@ -9,6 +9,7 @@ export const TICKETS_MOCKED: Ticket[] = [
     date: dateToday,
     student: 'Paul',
     major: enumeration.Info,
+    archived: false
   },
   {
     title: 'SI5 in Paris',
@@ -16,6 +17,7 @@ export const TICKETS_MOCKED: Ticket[] = [
     date: dateToday,
     student: 'Anakin',
     major: enumeration.Ang,
+    archived: false
   },
   
 ];

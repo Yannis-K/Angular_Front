@@ -5,27 +5,36 @@ import { Ticket } from '../../../models/ticket';
 @Component({
   selector: 'app-ticket-list',
   templateUrl: './ticket-list.component.html',
-  styleUrls: ['./ticket-list.component.scss']
+  styleUrls: ['./ticket-list.component.scss'],
 })
 export class TicketListComponent implements OnInit {
 
   public ticketList: Ticket[] = [];
+
+  displayTicketArchived: boolean;
+
 
   constructor(public ticketService: TicketService) {
     this.ticketService.tickets$.subscribe((tickets) => this.ticketList = tickets);
   }
 
   ngOnInit() {
+    this.displayTicketArchived = false;
   }
 
   ticketHasBeenSelected(hasBeenSelected: boolean) {
     console.log('event received from child:', hasBeenSelected);
   }
 
-  deleteTicket(ticket: Ticket) {
-    const index = this.ticketList.indexOf(ticket);
-    if (index > -1) {
-      this.ticketList.splice(index, 1);
+  archiveTicket(ticket:Ticket){
+    this.ticketService.archiveTicket(ticket);
+  }
+
+  filtre(){
+    if(this.displayTicketArchived){
+      this.displayTicketArchived=false;
+    }else{
+      this.displayTicketArchived = true;
     }
   }
 

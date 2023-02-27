@@ -11,9 +11,11 @@
   <i *ngIf="ticket.major == 'Informatique'" class="fas fa-database"></i> {{ticket.major}}
 
   
-
+<!--
   <button type="submit" class="btn-custom" (click)="deleteTicket()">Remove</button>
-
+ -->
+  <button (click)="archiveTicket()" *ngIf="ticket.archived == true"> Désarchiver </button>
+  <button (click)="archiveTicket()" *ngIf="ticket.archived == false"> Archiver </button>
 </div>
 
   

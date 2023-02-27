@@ -12,4 +12,5 @@ export interface Ticket {
   date?: Date;
   student?: string;
   major:enumeration;
+  archived?: boolean;
 }
